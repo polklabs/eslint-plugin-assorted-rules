@@ -1,0 +1,1 @@
+export const ANY_IF_STATEMENT = 'IfStatement';
