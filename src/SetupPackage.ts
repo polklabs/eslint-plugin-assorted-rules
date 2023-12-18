@@ -15,6 +15,7 @@ function main() {
     fs.copyFileSync(__dirname + "/../.npmignore", __dirname + "/.npmignore");
     fs.copyFileSync(__dirname + "/../.npmrc", __dirname + "/.npmrc");
     fs.copyFileSync(__dirname + "/../src/index.js", __dirname + "/index.js");
+    fs.copyFileSync(__dirname + "/../README.md", __dirname + "/README.md");
 }
 
 main();
