@@ -1,7 +1,5 @@
-import {
-    AST_NODE_TYPES,
-    TSESTree,
-} from "@typescript-eslint/experimental-utils";
+import { TSESTree } from "@typescript-eslint/utils/dist/ts-estree";
+import { AST_NODE_TYPES } from "@typescript-eslint/utils/dist";
 
 export function isIfStatement(
     node: TSESTree.Node

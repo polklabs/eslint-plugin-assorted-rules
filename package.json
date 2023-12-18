@@ -1,35 +1,44 @@
 {
-  "name": "eslint-plugin-assorted-rules",
-  "version": "1.0.0",
-  "description": "plugin for custom eslint rules",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "jest",
-    "build": "tsc && copy src\\index.js dist && copy package.json dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/polklabs/eslint-plugin-assorted-rules.git"
-  },
-  "dependencies": {
-    "typescript": "^4.4.4",
-    "jest": "^27.3.1",
-    "ts-jest": "^27.0.7",
-    "@types/jest": "^27.0.2",
-    "@typescript-eslint/parser": "^5.1.0",
-    "@typescript-eslint/experimental-utils": "^5.1.0",
-    "@typescript-eslint/eslint-plugin": "^5.1.0",
-    "requireindex": "^1.2.0"
-  },
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin"
-  ],
-  "author": "Andrew Polk",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/polklabs/eslint-plugin-assorted-rules/issues"
-  },
-  "homepage": "https://github.com/polklabs/eslint-plugin-assorted-rules#readme"
+    "name": "eslint-plugin-assorted-rules",
+    "version": "1.0.4",
+    "description": "plugin for custom eslint rules",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "jest",
+        "compile": "tsc",
+        "clean": "rimraf dist",
+        "build": "npm run clean && npm run compile && node dist/SetupPackage.js",
+        "publish": "cd dist && npm publish"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/polklabs/eslint-plugin-assorted-rules.git"
+    },
+    "dependencies": {
+        "@typescript-eslint/utils": "^6.14.0",
+        "requireindex": "^1.2.0",
+        "typescript": "^4.4.4"
+    },
+    "devDependencies": {
+        "@types/jest": "^27.0.2",
+        "@typescript-eslint/eslint-plugin": "^5.1.0",
+        "@typescript-eslint/parser": "^5.1.0",
+        "jest": "^27.3.1",
+        "ts-jest": "^27.0.7"
+    },
+    "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin"
+    ],
+    "exports": {
+        "./index.js": "./index,js",
+        "./rules": "./rules"
+    },
+    "author": "Andrew Polk",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/polklabs/eslint-plugin-assorted-rules/issues"
+    },
+    "homepage": "https://github.com/polklabs/eslint-plugin-assorted-rules#readme"
 }

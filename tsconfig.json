@@ -101,7 +101,8 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "src/rules/**/*"
+    "src/rules/**/*",
+    "src/SetupPackage.ts"
   ],
   "exclude": [
     "node_modules",

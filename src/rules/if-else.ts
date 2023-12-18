@@ -1,5 +1,5 @@
-import type { TSESTree } from "@typescript-eslint/experimental-utils";
 import { RuleContext } from "@typescript-eslint/utils/dist/ts-eslint";
+import { TSESTree } from "@typescript-eslint/utils/dist/ts-estree";
 import { createEslintRule } from "../utils/create-eslint-rule";
 import { ANY_IF_STATEMENT } from "../utils/selectors";
 import * as utils from "../utils/utils";
@@ -15,7 +15,6 @@ export default createEslintRule<Options, MessageIds>({
         docs: {
             description:
                 "All if statements must have a corresponding else statement",
-            recommended: "warn",
         },
         schema: [],
         messages: {
