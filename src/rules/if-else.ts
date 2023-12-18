@@ -1,5 +1,5 @@
+import type { TSESTree } from "@typescript-eslint/utils";
 import { RuleContext } from "@typescript-eslint/utils/dist/ts-eslint";
-import { TSESTree } from "@typescript-eslint/utils/dist/ts-estree";
 import { createEslintRule } from "../utils/create-eslint-rule";
 import { ANY_IF_STATEMENT } from "../utils/selectors";
 import * as utils from "../utils/utils";
@@ -14,12 +14,13 @@ export default createEslintRule<Options, MessageIds>({
         type: "problem",
         docs: {
             description:
-                "All if statements must have a corresponding else statement",
+                "All \"if\" statements must have a corresponding \"else\" statement",
+            recommended: "warn",
         },
         schema: [],
         messages: {
             ifElseRequired:
-                "The if statement should include a corresponding else statement",
+                "The \"if\" statement should include a corresponding \"else\" statement",
         },
     },
     defaultOptions: [],
@@ -28,6 +29,8 @@ export default createEslintRule<Options, MessageIds>({
             [ANY_IF_STATEMENT](node: TSESTree.IfStatement) {
                 if (node.parent && utils.isIfStatement(node.parent)) {
                     return;
+                } else {
+                    // Not an "else if", continue
                 }
 
                 let alternate = node.alternate;
@@ -44,11 +47,22 @@ export default createEslintRule<Options, MessageIds>({
 
                 if (alternate) {
                     return;
+                } else {
+                    // Continue to reporting issue
                 }
+
+                const { start } = node.loc;
+                const issueLocation = {
+                    start,
+                    end: {
+                        line: start.line,
+                        column: start.column + 2, // Highlight the opening brace
+                    },
+                };
 
                 context.report({
                     messageId: "ifElseRequired",
-                    loc: node.loc,
+                    loc: issueLocation,
                 });
             },
         };

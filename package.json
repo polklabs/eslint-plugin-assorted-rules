@@ -1,8 +1,8 @@
 {
     "name": "eslint-plugin-assorted-rules",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "plugin for custom eslint rules",
-    "main": "src/index.js",
+    "main": "./index.js",
     "scripts": {
         "test": "jest",
         "compile": "tsc",
@@ -15,14 +15,14 @@
         "url": "git+https://github.com/polklabs/eslint-plugin-assorted-rules.git"
     },
     "dependencies": {
-        "@typescript-eslint/utils": "^6.14.0",
-        "requireindex": "^1.2.0",
-        "typescript": "^4.4.4"
+        "@typescript-eslint/parser": "^5.1.0",
+        "@typescript-eslint/experimental-utils": "^5.1.0",
+        "@typescript-eslint/eslint-plugin": "^5.1.0",
+        "requireindex": "^1.2.0"
     },
     "devDependencies": {
         "@types/jest": "^27.0.2",
-        "@typescript-eslint/eslint-plugin": "^5.1.0",
-        "@typescript-eslint/parser": "^5.1.0",
+        "typescript": "^4.4.4",
         "jest": "^27.3.1",
         "ts-jest": "^27.0.7"
     },
@@ -31,10 +31,6 @@
         "eslintplugin",
         "eslint-plugin"
     ],
-    "exports": {
-        "./index.js": "./index,js",
-        "./rules": "./rules"
-    },
     "author": "Andrew Polk",
     "license": "MIT",
     "bugs": {
