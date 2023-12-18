@@ -8,7 +8,7 @@ An assortment of linting rules for typescript and angular
 npm i --save-dev eslint eslint-plugin-assorted-rules
 ```
 
-**Note:** If you installed ESLint globally then you must also install eslint-plugin-jest globally.
+**Note:** If you installed ESLint globally then you must also install eslint-plugin-assorted-rules globally.
 
 # Usage
 Add `assorted-rules` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
