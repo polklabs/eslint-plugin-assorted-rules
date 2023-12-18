@@ -1,6 +1,8 @@
 # eslint-plugin-assorted-rules
 An assortment of linting rules for typescript and angular
 
+[![Unit Tests](https://github.com/polklabs/eslint-plugin-assorted-rules/actions/workflows/node.js.yml/badge.svg)](https://github.com/polklabs/eslint-plugin-assorted-rules/actions/workflows/node.js.yml)
+
 # Installation
 ```bash
 npm i --save-dev eslint eslint-plugin-assorted-rules
