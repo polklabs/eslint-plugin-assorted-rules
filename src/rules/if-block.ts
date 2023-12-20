@@ -29,7 +29,8 @@ export default createEslintRule<Options, MessageIds>({
                 if (
                     (node.alternate &&
                         utils.isExpressionStatement(node.alternate)) ||
-                    utils.isExpressionStatement(node.consequent)
+                    utils.isExpressionStatement(node.consequent) ||
+                    utils.isReturnStatement(node.consequent)
                 ) {
                     context.report({
                         messageId: "ifBlockRequired",

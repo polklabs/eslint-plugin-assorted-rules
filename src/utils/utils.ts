@@ -18,3 +18,9 @@ export function isExpressionStatement(
 ): node is TSESTree.ExpressionStatement {
     return node.type === AST_NODE_TYPES.ExpressionStatement;
 }
+
+export function isReturnStatement(
+    node: TSESTree.Node
+): node is TSESTree.ReturnStatement {
+    return node.type === AST_NODE_TYPES.ReturnStatement;
+}

@@ -1,6 +1,6 @@
 {
     "name": "eslint-plugin-assorted-rules",
-    "version": "1.0.8",
+    "version": "1.0.10",
     "description": "plugin for custom eslint rules",
     "main": "./index.js",
     "scripts": {

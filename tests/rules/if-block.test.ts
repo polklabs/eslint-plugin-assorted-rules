@@ -39,6 +39,14 @@ const validStatements = [
         }
     }
     `,
+    `
+    function x() {
+        let a = 0
+        if(a===0) {
+            return;
+        }
+    }
+    `,
 ];
 const invalidStatemets = [
     `
@@ -86,6 +94,12 @@ const invalidStatemets = [
             a = 2;
     }
     `,
+    `
+    function x() {
+        let a = 0
+        if(a===0) return;
+    }
+    `,
 ];
 
 const messageId: MessageIds = "ifBlockRequired";
@@ -99,5 +113,6 @@ ruleTester.run(RULE_NAME, rule, {
         { code: invalidStatemets[3], errors: [{ messageId }] },
         { code: invalidStatemets[4], errors: [{ messageId }] },
         { code: invalidStatemets[5], errors: [{ messageId }] },
+        { code: invalidStatemets[6], errors: [{ messageId }] },
     ],
 });
