@@ -31,10 +31,22 @@ Then configure the rules you want to use under the rules section.
 
 # Rules
 
-| Name              | Description                      |
-| :---------------- | :------------------------------- |
-| [if-else](docs/rules/if-else.md)           | Enforce every "if" has an "else" |
-| [if-block](docs/rules/if-block.md)         | Enforce all if statements have curly braces |
+| Name              | Description                      | Status |
+| :---------------- | :------------------------------- | :----- |
+| [if-else](docs/rules/if-else.md)           | Enforce every `if` has an `else` | ✅ |
+| [if-block](docs/rules/if-block.md)         | Enforce all `if` statements have curly braces | ✅ |
+| while-block | Enforce all `while` statements have curly braces | 🔧 |
+| for-block | Enforce all `for` statements have curly braces | 🔧 |
+| switch-default | Enforce switch statements have a `default`| 🔧 |
+| i-interface | Enforce all `interface` names start with 'i' | 🔧 | 
+| file-lint-disable | Don't allow disabling linting rules for entire file | ❓ |
+
+✅ Complete
+
+🔧 In Progress
+
+❓ Check if possible
+
 
 ##
 # Publishing (developer only)
