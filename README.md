@@ -35,7 +35,7 @@ Then configure the rules you want to use under the rules section.
 | :---------------- | :------------------------------- | :----- |
 | [if-else](docs/rules/if-else.md)           | Enforce every `if` has an `else` | ✅ |
 | [if-block](docs/rules/if-block.md)         | Enforce all `if` statements have curly braces | ✅ |
-| while-block | Enforce all `while` statements have curly braces | 🔧 |
+| [while-block](docs/rules/while-block.md) | Enforce all `while` statements have curly braces | ✅ |
 | for-block | Enforce all `for` statements have curly braces | 🔧 |
 | switch-default | Enforce switch statements have a `default`| 🔧 |
 | i-interface | Enforce all `interface` names start with 'i' | 🔧 | 
