@@ -1,6 +1,6 @@
 # Enforce every `if` has an `else` (`if-else`)
 
-This rule makes sure that every if statement ends with an else statement. `else if` does not count as an else statement.
+This rule makes sure that every if statement ends with an else statement. `else if (/*test*/) {}` does not count as an else statement.
 
 ```typescript
 // valid

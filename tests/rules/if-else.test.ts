@@ -11,9 +11,7 @@ const validStatements = [
         let a = 0
         if(a===0) {
             // Do something
-        } else {
-            // Other
-        }
+        } else { /*stub*/ }
     }
     `,
     `
@@ -23,9 +21,7 @@ const validStatements = [
             // Do something
         } else if (a===1) {
             // Do something else
-        } else {
-            // Other
-        }
+        } else { /*stub*/ }
     }
     `,
     `
@@ -44,14 +40,12 @@ const validStatements = [
             let b = 1;
             if (b === 1) {
                 // b=1
-            } else {
-                // b!=1
-            }
-        } else {
+            } else { /*stub*/ }
+        } else { 
             // Other
         }
     }
-    `
+    `,
 ];
 const invalidStatemets = [
     `
@@ -87,20 +81,68 @@ const invalidStatemets = [
             if (b === 1) {
                 // b=1
             }
-        } else {
+        } else { 
             // Other
         }
     }
-    `
+    `,
 ];
 
 const messageId: MessageIds = "ifElseRequired";
+const messageIdStub: MessageIds = "addStub";
 
 ruleTester.run(RULE_NAME, rule, {
     valid: validStatements,
     invalid: [
-        { code: invalidStatemets[0], errors: [{ messageId }] },
-        { code: invalidStatemets[1], errors: [{ messageId }] },
-        { code: invalidStatemets[2], errors: [{ messageId }] },
+        {
+            code: invalidStatemets[0],
+            errors: [
+                {
+                    messageId,
+                    suggestions: [
+                        {
+                            messageId: messageIdStub,
+                            output: validStatements[0],
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            code: invalidStatemets[1],
+            errors: [
+                {
+                    messageId,
+                    suggestions: [
+                        {
+                            messageId: messageIdStub,
+                            output: validStatements[1],
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            code: invalidStatemets[2],
+            errors: [
+                {
+                    messageId,
+                },
+            ],
+        },
+        {
+            code: invalidStatemets[3],
+            errors: [
+                {
+                    messageId,
+                    suggestions: [
+                        {
+                            messageId: messageIdStub,
+                            output: validStatements[3],
+                        },
+                    ],
+                },
+            ],
+        },
     ],
 });

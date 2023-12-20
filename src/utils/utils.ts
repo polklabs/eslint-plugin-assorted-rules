@@ -12,3 +12,9 @@ export function isBlockStatement(
 ): node is TSESTree.BlockStatement {
     return node.type === AST_NODE_TYPES.BlockStatement;
 }
+
+export function isExpressionStatement(
+    node: TSESTree.Node
+): node is TSESTree.ExpressionStatement {
+    return node.type === AST_NODE_TYPES.ExpressionStatement;
+}

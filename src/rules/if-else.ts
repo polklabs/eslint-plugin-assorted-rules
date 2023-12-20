@@ -5,7 +5,7 @@ import { ANY_IF_STATEMENT } from "../utils/selectors";
 import * as utils from "../utils/utils";
 
 export const RULE_NAME = "if-else";
-export type MessageIds = "ifElseRequired";
+export type MessageIds = "ifElseRequired" | "addStub";
 export type Options = [];
 
 export default createEslintRule<Options, MessageIds>({
@@ -14,14 +14,16 @@ export default createEslintRule<Options, MessageIds>({
         type: "problem",
         docs: {
             description:
-                "All \"if\" statements must have a corresponding \"else\" statement",
+                'All "if" statements must have a corresponding "else" statement',
             recommended: "warn",
         },
         schema: [],
         messages: {
             ifElseRequired:
-                "The \"if\" statement should include a corresponding \"else\" statement",
+                'The "if" statement should include a corresponding "else" statement',
+            addStub: "Add 'else { /* stub */ }'. This maintains the current functionality.",
         },
+        hasSuggestions: true,
     },
     defaultOptions: [],
     create: (context: Readonly<RuleContext<MessageIds, Options>>) => {
@@ -63,6 +65,17 @@ export default createEslintRule<Options, MessageIds>({
                 context.report({
                     messageId: "ifElseRequired",
                     loc: issueLocation,
+                    suggest: [
+                        {
+                            messageId: "addStub",
+                            fix: (fixer) => {
+                                return fixer.insertTextAfter(
+                                    node,
+                                    " else { /*stub*/ }"
+                                );
+                            },
+                        },
+                    ],
                 });
             },
         };

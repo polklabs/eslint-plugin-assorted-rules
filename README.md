@@ -34,9 +34,10 @@ Then configure the rules you want to use under the rules section.
 | Name              | Description                      |
 | :---------------- | :------------------------------- |
 | [if-else](docs/rules/if-else.md)           | Enforce every "if" has an "else" |
+| [if-block](docs/rules/if-block.md)         | Enforce all if statements have curly braces |
 
 ##
-# Publishing
+# Publishing (developer only)
 
 ```bash
 npm run build
