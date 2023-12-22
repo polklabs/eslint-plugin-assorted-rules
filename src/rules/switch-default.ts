@@ -32,7 +32,7 @@ export default createEslintRule<Options, MessageIds>({
                         start,
                         end: {
                             line: start.line,
-                            column: start.column + 6, // Highlight the opening brace
+                            column: start.column + 6, // Highlight the opening 'switch'
                         },
                     };
                     context.report({

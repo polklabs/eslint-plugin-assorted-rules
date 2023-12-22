@@ -58,7 +58,7 @@ export default createEslintRule<Options, MessageIds>({
                     start,
                     end: {
                         line: start.line,
-                        column: start.column + 2, // Highlight the opening brace
+                        column: start.column + 2, // Highlight the opening 'if'
                     },
                 };
 
