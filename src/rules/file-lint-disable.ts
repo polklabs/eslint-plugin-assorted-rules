@@ -6,7 +6,7 @@ export type MessageIds = "fileLintDisableRequired";
 export type Options = [];
 
 // The 'X?' is used so I can run tests without Jest complaining about disabling non-existent eslint rules
-const regex = /\/\*\seslint-disableX?\s.+?\s\*\//gms;
+const regex = /\/\*\s*eslint-disableX?\s*.+?\s*\*\//gms;
 
 export default createEslintRule<Options, MessageIds>({
     name: RULE_NAME,
