@@ -37,7 +37,7 @@ Then configure the rules you want to use under the rules section.
 | [if-block](docs/rules/if-block.md)         | Enforce all `if` statements have curly braces | ✅ |
 | [while-block](docs/rules/while-block.md) | Enforce all `while` statements have curly braces | ✅ |
 | [for-block](docs/rules/for-block.md) | Enforce all `for` statements have curly braces | ✅ |
-| switch-default | Enforce switch statements have a `default`| 🔧 |
+| [switch-default](docs/rules/switch-default.md) | Enforce `switch` statements have a `default` case| ✅ |
 | [i-interface](docs/rules/i-interface.md) | Enforce all `interface` names start with 'I' | ✅ | 
 | file-lint-disable | Don't allow disabling linting rules for entire file | ❓ |
 
