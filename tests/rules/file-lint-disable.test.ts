@@ -36,6 +36,19 @@ const invalidStatemets = [
     `,
     `
     /* eslint-disableX assorted-rules/i-interface */
+    /* eslint-disableX assorted-rules/i-interface */
+    /* eslint-disableX assorted-rules/i-interface */
+    /* eslint-disableX assorted-rules/i-interface */
+    function x() {
+        let a = [3,1,4,1,5,9];
+        for (let item of a) console.log(item);
+    }
+    `,
+    `
+    /* eslint-disableX 
+        assorted-rules/i-interface 
+        assorted-rules/i-interface 
+    */
     function x() {
         let a = [3,1,4,1,5,9];
         for (let item of a) console.log(item);
@@ -49,6 +62,7 @@ ruleTester.run(RULE_NAME, rule, {
     valid: validStatements,
     invalid: [
         { code: invalidStatemets[0], errors: [{ messageId }] },
-        { code: invalidStatemets[1], errors: [{ messageId }] },
+        { code: invalidStatemets[1], errors: [{ messageId },{ messageId },{ messageId },{ messageId }] },
+        { code: invalidStatemets[2], errors: [{ messageId }] },
     ],
 });
