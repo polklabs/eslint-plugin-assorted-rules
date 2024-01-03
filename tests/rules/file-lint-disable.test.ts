@@ -54,6 +54,18 @@ const invalidStatemets = [
         for (let item of a) console.log(item);
     }
     `,
+    `
+/* 
+eslint-disableX
+  assorted-rules/i-interface
+  assorted-rules/i-interface
+  assorted-rules/i-interface
+  assorted-rules/i-interface 
+ */
+   function x() {
+    console.log('test');
+   }
+    `
 ];
 
 const messageId: MessageIds = "fileLintDisableRequired";
@@ -64,5 +76,6 @@ ruleTester.run(RULE_NAME, rule, {
         { code: invalidStatemets[0], errors: [{ messageId }] },
         { code: invalidStatemets[1], errors: [{ messageId },{ messageId },{ messageId },{ messageId }] },
         { code: invalidStatemets[2], errors: [{ messageId }] },
+        { code: invalidStatemets[3], errors: [{ messageId }] },
     ],
 });
