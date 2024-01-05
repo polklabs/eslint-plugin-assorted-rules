@@ -25,6 +25,15 @@ const validStatements = [
         }
     }
     `,
+    `
+    function x() {
+        /* eslint-disableX-next-line @typescript-eslint/no-unused-vars */
+        let a: any = 0
+        for(let i = 0; i < 12; i++) {
+            a++;
+        }
+    }
+    `,
 ];
 const invalidStatemets = [
     `
