@@ -35,7 +35,7 @@ const validStatements = [
     }
     `,
 ];
-const invalidStatemets = [
+const invalidStatements = [
     `
     /* eslint-disableX @typescript-eslint/no-unused-vars */
     function x() {
@@ -82,9 +82,9 @@ const messageId: MessageIds = "fileLintDisableRequired";
 ruleTester.run(RULE_NAME, rule, {
     valid: validStatements,
     invalid: [
-        { code: invalidStatemets[0], errors: [{ messageId }] },
-        { code: invalidStatemets[1], errors: [{ messageId },{ messageId },{ messageId },{ messageId }] },
-        { code: invalidStatemets[2], errors: [{ messageId }] },
-        { code: invalidStatemets[3], errors: [{ messageId }] },
+        { code: invalidStatements[0], errors: [{ messageId }] },
+        { code: invalidStatements[1], errors: [{ messageId },{ messageId },{ messageId },{ messageId }] },
+        { code: invalidStatements[2], errors: [{ messageId }] },
+        { code: invalidStatements[3], errors: [{ messageId }] },
     ],
 });

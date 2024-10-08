@@ -24,3 +24,9 @@ export function isReturnStatement(
 ): node is TSESTree.ReturnStatement {
     return node.type === AST_NODE_TYPES.ReturnStatement;
 }
+
+export function isBinaryExpression(
+    node: TSESTree.Node
+): node is TSESTree.BinaryExpression {
+    return node.type === AST_NODE_TYPES.BinaryExpression;
+}

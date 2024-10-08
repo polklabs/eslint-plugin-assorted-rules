@@ -40,6 +40,8 @@ Then configure the rules you want to use under the rules section.
 | [switch-default](docs/rules/switch-default.md) | Enforce `switch` statements have a `default` case| ✅ |
 | [i-interface](docs/rules/i-interface.md) | Enforce all `interface` names start with 'I' | ✅ | 
 | [file-lint-disable](docs/rules/file-lint-disable.md) | Don't allow disabling linting rules for entire file | ✅ |
+| [triple-equals](docs/rules/triple-equals.md) | Always use === instead of == | ✅ |
+| hardcoded-colors | Disallow hard coded colors in ts files | 🔧 |
 | jsdoc-required | Enforce jsdoc comments for all methods | ❓ |
 
 ✅ Complete
