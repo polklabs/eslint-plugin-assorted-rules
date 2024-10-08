@@ -17,6 +17,10 @@ const validStatements = [
         // Do something else
     }
     `,
+    `
+    const i = 0;
+    const b = i !== 1;
+    `,
 ];
 const invalidStatements = [
     `
@@ -30,14 +34,20 @@ const invalidStatements = [
         // Do something else
     }
     `,
+    `
+    const i = 0;
+    const b = i != 1;
+    `,
 ];
 
 const messageId: MessageIds = "tripleEqualsRequired";
+const messageNotId: MessageIds = "tripleNotEqualsRequired";
 
 ruleTester.run(RULE_NAME, rule, {
     valid: validStatements,
     invalid: [
         { code: invalidStatements[0], errors: [{ messageId }] },
         { code: invalidStatements[1], errors: [{ messageId }] },
+        { code: invalidStatements[2], errors: [{ messageId: messageNotId }] },
     ],
 });

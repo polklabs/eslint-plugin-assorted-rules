@@ -5,7 +5,7 @@ import { ANY_BINARY_EXPRESSION } from "../utils/selectors";
 import * as utils from "../utils/utils";
 
 export const RULE_NAME = "triple-equals";
-export type MessageIds = "tripleEqualsRequired";
+export type MessageIds = "tripleEqualsRequired" | "tripleNotEqualsRequired";
 export type Options = [];
 
 export default createEslintRule<Options, MessageIds>({
@@ -13,12 +13,13 @@ export default createEslintRule<Options, MessageIds>({
     meta: {
         type: "problem",
         docs: {
-            description: "All equal comparisons must use ===",
+            description: "All equal comparisons must use === or !==",
             recommended: "warn",
         },
         schema: [],
         messages: {
             tripleEqualsRequired: 'The "==" should be "==="',
+            tripleNotEqualsRequired: 'The "!=" should be "!=="'
         },
         hasSuggestions: true,
     },
@@ -30,6 +31,11 @@ export default createEslintRule<Options, MessageIds>({
                     if (node.operator === "==") {
                         context.report({
                             messageId: "tripleEqualsRequired",
+                            loc: node.loc,
+                        });
+                    } else if (node.operator === "!=") {
+                        context.report({
+                            messageId: "tripleNotEqualsRequired",
                             loc: node.loc,
                         });
                     } else {
