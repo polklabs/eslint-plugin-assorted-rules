@@ -48,7 +48,7 @@ const validStatements = [
     }
     `,
 ];
-const invalidStatemets = [
+const invalidStatements = [
     `
     function x() {
         let a = 0
@@ -107,12 +107,12 @@ const messageId: MessageIds = "ifBlockRequired";
 ruleTester.run(RULE_NAME, rule, {
     valid: validStatements,
     invalid: [
-        { code: invalidStatemets[0], errors: [{ messageId }] },
-        { code: invalidStatemets[1], errors: [{ messageId }] },
-        { code: invalidStatemets[2], errors: [{ messageId }] },
-        { code: invalidStatemets[3], errors: [{ messageId }] },
-        { code: invalidStatemets[4], errors: [{ messageId }] },
-        { code: invalidStatemets[5], errors: [{ messageId }] },
-        { code: invalidStatemets[6], errors: [{ messageId }] },
+        { code: invalidStatements[0], errors: [{ messageId }] },
+        { code: invalidStatements[1], errors: [{ messageId }] },
+        { code: invalidStatements[2], errors: [{ messageId }] },
+        { code: invalidStatements[3], errors: [{ messageId }] },
+        { code: invalidStatements[4], errors: [{ messageId }] },
+        { code: invalidStatements[5], errors: [{ messageId }] },
+        { code: invalidStatements[6], errors: [{ messageId }] },
     ],
 });
